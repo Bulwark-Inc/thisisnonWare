@@ -1,0 +1,117 @@
+# =====================================================
+# OS files
+# =====================================================
+.DS_Store
+Thumbs.db
+
+# =====================================================
+# Editor / IDE
+# =====================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =====================================================
+# Python / Django
+# =====================================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.python-version
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+
+# Django collected/static files
+staticfiles/
+media/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# database
+*.db
+*.sqlite3
+*.sqlite3-journal
+
+# =====================================================
+# Next.js / Node.js
+# =====================================================
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Turbopack
+.turbo/
+
+# Build outputs
+dist/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage
+coverage/
+
+# Environment variables
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# =====================================================
+# Docker
+# =====================================================
+# Docker local overrides
+docker-compose.override.yml
+
+# Local volumes
+postgres_data/
+redis_data/
+
+# =====================================================
+# Misc
+# =====================================================
+.cache/
+tmp/
+temp/
+
+# =====================================================
+# Git
+# =====================================================
+*.orig
