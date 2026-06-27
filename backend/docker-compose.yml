@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nonware
+      POSTGRES_USER: nonware
+      POSTGRES_PASSWORD: nonwarepassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.prod
+      DATABASE_URL: postgres://nonware:nonwarepassword@db:5432/nonware
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:

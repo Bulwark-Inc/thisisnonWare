@@ -1,3 +1,4 @@
+import os
 from config.api.router import api
 
 
@@ -8,12 +9,13 @@ def root(request):
         "service": "backend-api"
     }
 
+
 @api.get("/info")
 def info(request):
     return {
         "service": "backend-api",
-        "version": "v1",
-        "environment": "production",
+        "version": os.getenv("APP_VERSION", "dev"),
+        "environment": os.getenv("ENVIRONMENT", "unknown"),
         "status": "running"
     }
 
