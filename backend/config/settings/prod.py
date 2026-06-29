@@ -32,3 +32,21 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Secure cookies
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+
+# =========================================
+# Media and static files configuration
+# =========================================
+STATIC_BUCKET_NAME = "nonware-demo-backend-static"
+MEDIA_BUCKET_NAME = "nonware-demo-backend-media"
+
+STATIC_URL = f"https://storage.googleapis.com/{STATIC_BUCKET_NAME}/static/"
+MEDIA_URL = f"https://storage.googleapis.com/{MEDIA_BUCKET_NAME}/media/"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "config.storage_backends.MediaStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "config.storage_backends.StaticStorage",
+    },
+}
